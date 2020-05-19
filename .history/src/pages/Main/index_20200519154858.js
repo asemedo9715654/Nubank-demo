@@ -27,14 +27,8 @@ export default function Main() {
 
   function onHandlerStateChanged(event){
       if(event.nativeEvent.oldState=== State.ACTIVE){
-        const {translationY} = event.nativeEvent;
-        offfset+=translationY;
-
-        translateY.setOffset(offfset);
-        translateY.setValue(0);
-
+        const {ggg} = event.nativeEvent
       }
-
   }
 
   return (

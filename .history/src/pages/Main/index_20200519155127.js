@@ -29,12 +29,7 @@ export default function Main() {
       if(event.nativeEvent.oldState=== State.ACTIVE){
         const {translationY} = event.nativeEvent;
         offfset+=translationY;
-
-        translateY.setOffset(offfset);
-        translateY.setValue(0);
-
       }
-
   }
 
   return (

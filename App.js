@@ -1,19 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,StatusBar } from 'react-native';
+import Main from './src/pages/Main/index';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+//Create a Component
+const App = () => (
+  <>
+  <StatusBar barStyle="light-content" backgroundColor="#8B10AE"/>
+  <Main />
+  </>
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+//Export App - This line solved my issue
+export default App;
+

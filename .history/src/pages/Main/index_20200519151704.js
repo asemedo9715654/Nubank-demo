@@ -13,8 +13,6 @@ import  {Container,Content,Card,CardHeader,CardContent,CardFooter,Title,Descript
 
 export default function Main() {
 
-  let offfset = 0;
-
   const translateY = new Animated.Value(0);
 
   const animatedEvent = Animated.event([
@@ -26,29 +24,21 @@ export default function Main() {
   ],{useNativeDriver:true})
 
   function onHandlerStateChanged(event){
-      if(event.nativeEvent.oldState=== State.ACTIVE){
-        const {translationY} = event.nativeEvent;
-        offfset+=translationY;
-
-        translateY.setOffset(offfset);
-        translateY.setValue(0);
-
-      }
 
   }
+
 
   return (
       <Container>
         <Header/>
         <Content>
-          <Menu translateY={translateY}/>
+          <Menu/>
           <PanGestureHandler onGestureEvent={animatedEvent} onHandlerStateChange={onHandlerStateChanged}>
             <Card style={{
               transform:[{
                 translateY:translateY.interpolate({
-                  inputRange:[-200,0,380],
-                  outputRange:[-50,0,380],
-                  extrapolate:'clamp'
+                  inputRange:[0,380],
+                  outputRange:[]
                 }),
               }]
             }}> 
@@ -69,7 +59,7 @@ export default function Main() {
           </PanGestureHandler>
          
         </Content>
-        <Tabs translateY={translateY}/>
+        <Tabs/>
       </Container>
   );
 }

@@ -26,15 +26,7 @@ export default function Main() {
   ],{useNativeDriver:true})
 
   function onHandlerStateChanged(event){
-      if(event.nativeEvent.oldState=== State.ACTIVE){
-        const {translationY} = event.nativeEvent;
-        offfset+=translationY;
-
-        translateY.setOffset(offfset);
-        translateY.setValue(0);
-
-      }
-
+      if(event.nativeEvent.oldState=== State.ACTIVE)
   }
 
   return (
